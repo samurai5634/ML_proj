@@ -1,7 +1,7 @@
-import sys,logging
-import logger
+import sys
+from logger import logging
 
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
 
 def error_message_details(error,error_details:sys):
     _,_,exc_err = error_details.exc_info()
@@ -21,7 +21,7 @@ if __name__ == '__main__':
     try:
         a = 1/0
     except Exception as e:
-        logger.exception('Divide by Zero error occured')
+        logging.exception('Divide by Zero error occured')
         raise CustomException(e,sys)
     
    
